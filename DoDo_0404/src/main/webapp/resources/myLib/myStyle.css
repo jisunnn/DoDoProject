@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+a {color:gray; text-decoration:none; font-weight:bold;}
+a:hover {color:DimGray;}
+a:active {color:green;}
+ 
+/* Link Button 만들기 
+button {
+	width:140px; height:70px; background-color:aqua;
+	border-radius:20px; border: 5px solid lightgray;
+	text-align:center; color:gray; font-weight:bold;
+}
+button:hover {color:DimGray; font-size: 1.2em;}
+button:active {color:green;}
+*/
+.eMessage {	color:red;
+			font-size:x-small;
+			font-style:italic;
+			}
+/*  Check  List searchBar */
+#searchBar {
+	color:DimGray ; font-family:돋움; font-size:16px;
+	float: left;
+}
+.textLink {
+	font-weight: bold;
+}
+
+/* Ajax_jsonView BoardList Test3. */
+.content { color: gray; }
+#content { 
+	display: none;
+	width: 300px;
+	height: 70px;
+	background: snow;	
+	z-index: 100;
+	position: absolute;
+}

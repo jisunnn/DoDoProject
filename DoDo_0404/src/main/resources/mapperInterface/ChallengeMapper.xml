@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapperInterface.ChallengeMapper">
+ 
+	<select id="selectList" resultType="vo.ChallengeVO">
+		select * from d_challenge order by seq desc
+	</select>
+	
+	<select id="selectOne" resultType="vo.ChallengeVO">
+		select * from d_challenge where seq=#{seq}
+	</select>
+	
+	<select id="selectParticipate" resultType="vo.ChallengeVO">
+		select c.seq, c.title, c.regdate, c.id, c.sdate, 
+				c.term, c.content, c.thumbnail, c.category
+    	from d_challenge c inner join piledata p 
+    	on(c.seq = p.cno) where p.entry = #{loginID}
+	</select>
+	
+	<select id="selectRecruit" resultType="vo.ChallengeVO">
+ 		select * from d_challenge 
+			where TO_CHAR(sysdate, 'YYYY/MM/dd') 
+			<![CDATA[<]]> TO_CHAR(sdate, 'YYYY/MM/dd')
+	</select>
+	
+	<select id="selectDoing" resultType="vo.ChallengeVO">
+		select * from d_challenge 
+			where TO_CHAR(sysdate, 'YYYY/MM/dd') 
+			<![CDATA[>]]> TO_CHAR(sdate, 'YYYY/MM/dd')
+	</select>
+	
+	<select id="selectDone" resultType="vo.ChallengeVO">
+		select * from d_challenge 
+			where TO_CHAR(sysdate, 'YYYY/MM/dd') 
+			<![CDATA[>]]> TO_DATE(TO_CHAR(sdate, 'YYYY/MM/dd'))+term
+	</select>
+
+	<insert id="insert">
+		<selectKey keyProperty="seq" resultType="int" order="BEFORE">
+			select nvl(max(seq),0)+1 from d_challenge
+		</selectKey>
+ 		insert into d_challenge (seq,title,id,category,sdate,term,content,thumbnail) 
+ 		values(#{seq},#{title},#{id},#{category},#{sdate},#{term},#{content},#{thumbnail})
+ 	</insert>
+	
+	<update id="update">
+		update d_challenge set title=#{title}, category=#{category}, sdate=#{sdate}, 
+								term=#{term}, content=#{content}
+							where seq=#{seq}
+	</update>
+	
+	<delete id="delete">
+		delete from d_challenge where seq=#{seq}
+	</delete>
+	
+	<delete id="deleteParticipate">
+		delete from piledata where cno=#{seq}
+	</delete>
+	
+	<delete id="deleteReply">
+		delete from reply where seq=#{seq}
+	</delete>
+	
+	<sql id="searchCat">
+		<if test="check != null">
+			<bind name="keyVal" value="check"/>
+		</if>
+		<choose>
+			<when test="check=='공부'.toString()">
+				where category = #{keyVal}
+			</when>
+			<when test="check=='운동'.toString()">
+  				where category = #{keyVal}
+	  		</when>
+		  	<when test="check=='생활'.toString()">
+		  		where category = #{keyVal}
+		  	</when>
+		  	<when test="check=='취미'.toString()">
+		  		where category = #{keyVal}
+		  	</when>
+		</choose>
+	</sql>
+	
+	<select id="checkCategory" resultType="vo.ChallengeVO">
+		select * from d_challenge
+		<include refid="searchCat" />
+	</select>
+	
+	<select id="checkTitle" resultType="vo.ChallengeVO">
+		select * from d_challenge
+		<if test="check != null">
+			<bind name="keyVal" value="'%'+check+'%'"/>
+			where title like #{keyVal}
+		</if>
+	</select>
+	
+	<update id="updateDoing">
+		update d_challenge set state='doing' 
+			where sdate <![CDATA[<=]]> sysdate and sdate+term > sysdate
+	</update>
+	
+	<update id="updateDone">
+		update d_challenge set state='done' 
+			where sdate+term <![CDATA[<]]> sysdate
+	</update>
+	
+	<sql id="searchState">
+		<if test="check != null">
+			<bind name="keyVal" value="check"/>
+		</if>
+		<choose>
+			<when test="check=='recruit'.toString()">
+				where state = #{keyVal}
+			</when>
+			<when test="check=='doing'.toString()">
+  				where state = #{keyVal}
+	  		</when>
+		  	<when test="check=='done'.toString()">
+		  		where state = #{keyVal}
+		  	</when>
+		</choose>
+	</sql>
+	
+	<select id="checkState" resultType="vo.ChallengeVO">
+		select * from d_challenge
+		<include refid="searchState" />
+	</select>
+	
+	
+</mapper>

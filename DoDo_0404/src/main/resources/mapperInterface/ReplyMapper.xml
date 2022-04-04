@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapperInterface.ReplyMapper">
+	 
+	<insert id="rinsert">
+		<selectKey keyProperty="step" resultType="int" order="BEFORE">
+			select nvl(max(step),0)+1 from reply where seq=#{seq}
+		</selectKey>
+ 		insert into reply (seq,step,id,content) 
+ 		values(#{seq},#{step},#{id},#{content})
+ 	</insert>
+ 	
+ 	<select id="rList" resultType="vo.ReplyVO">
+ 		select * from reply where seq = #{seq} order by step desc
+ 	</select>
+
+	<select id="cntReport" resultType="int">
+		select report from reply where seq = #{seq} and step = #{step}
+	</select>
+
+	<update id="rreport">
+		update reply set report = report+1, detail = #{detail} 
+			where seq = #{seq} and step = #{step}
+	</update>
+	
+	<select id="reportedList" resultType="vo.ReplyVO">
+       select * from reply where id = #{nick}
+	</select>
+   
+</mapper>

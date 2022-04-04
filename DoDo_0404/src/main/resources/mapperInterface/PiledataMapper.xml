@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapperInterface.PiledataMapper">
+	 
+	<select id="checkParticipate" resultType="vo.PiledataVO">
+		select * from piledata where cno=#{seq} and entry=#{loginID}
+	</select>
+	
+	<insert id="participate">
+		insert into piledata (cno, entry, term) values (#{seq}, #{loginID}, #{term})
+	</insert>
+	
+	<select id="checkAttend" resultType="vo.PiledataVO">
+		select * from 
+    			(select p.cno, p.entry, p.attend, p.term, p.lastattend 
+        	from piledata p left outer join d_challenge c on p.cno=c.seq)
+    		where cno = #{seq} and  entry = #{loginID} and 
+    		TO_CHAR(lastattend,'YYYY/MM/dd') = TO_CHAR(sysdate,'YYYY/MM/dd')
+	</select>
+	
+	<update id="attend">
+		update piledata 
+			set attend=attend+1, lastattend=sysdate
+				where cno = #{seq} and entry = #{loginID}
+	</update>
+	
+	<select id="selectResult" resultType="vo.PiledataVO">
+		select cno, entry, m.nick, attend, term, 
+		nvl((attend*100) / decode(term,0,null,term),0) as result
+    		from piledata p INNER join d_member m
+    		on p.cno = #{seq} and p.entry = m.id order by m.nick
+	</select>
+	
+	<select id="participateResult" resultType="map">
+		select cno, nvl((attend*100) / decode(term,0,null,term),0) as result
+ 			from (select cno, entry, m.nick, attend, term 
+    				from piledata p INNER join d_member m
+    				on p.entry = m.id) 
+    		where entry = #{loginID} order by cno desc
+    </select>
+    
+	
+</mapper>

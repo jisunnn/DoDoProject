@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+  
+<mapper namespace="mapperInterface.MemberMapper">
+  
+ 	<select id="selectOne" resultType="vo.MemberVO">
+		SELECT * FROM d_member WHERE id = #{id}
+	</select>
+	
+	<select id="selectOnebyMail" resultType="vo.MemberVO">
+	    SELECT * FROM d_member WHERE mail = #{mail}	
+	</select>
+	
+ 	<insert id="insert">
+ 		INSERT INTO d_member(id, password, name, mail, nick, prefer, rid) 
+		VALUES(#{id}, #{password}, #{name}, #{mail}, #{nick}, #{prefer, jdbcType=VARCHAR}, #{rid, jdbcType=VARCHAR})
+ 	</insert>
+ 	
+	<update id="update">
+		UPDATE d_member SET password=#{password}, name=#{name}, 
+		mail=#{mail}, nick=#{nick}, prefer=#{prefer, jdbcType=VARCHAR} 
+		WHERE id=#{id}
+	</update>
+	
+	<update id="pwUpdate">
+		update d_member set password=#{password} where tmpPassword=#{tmpPassword}
+	</update>
+	
+	<update id="tmpDelete">
+		update d_member set tmpPassword=null where password=#{password}
+	</update>
+	
+	<delete id="delete">
+		delete from d_member where id=#{id}
+	</delete>
+	
+	<select id="findID" resultType="vo.MemberVO">
+		select * from d_member where name=#{name} and mail=#{mail}
+	</select> 
+	
+	<select id="findPW" resultType="vo.MemberVO">
+		select * from d_member where id=#{id} and mail=#{mail}
+	</select>
+	
+	<update id="setPassword">
+		update d_member set tmpPassword=#{tmpPassword} where id=#{id} and mail=#{mail}
+	</update>
+	
+	<select id="pageList" resultType="vo.MemberVO">
+	    SELECT id, name, nick, point
+	    FROM d_member
+	    WHERE id != 'admin' ORDER BY id	ASC
+	</select>
+	
+	<select id="selectList" resultType="vo.MemberVO">
+	    SELECT id, name, nick, point
+	    FROM d_member
+	    WHERE id != 'admin' ORDER BY id ASC
+	</select>
+	
+	<select id="totalRowCount" resultType="int">
+	    SELECT COUNT(*) FROM d_member
+	</select>
+	
+	<update id="pointMinus1">
+		update d_member set point = point-100 where nick = #{id}
+	</update>
+	<update id="pointMinus2">
+		update d_member set point = point-100 where id = #{loginID}
+	</update>
+	<update id="pointPlus1">
+		update d_member set point = point+200 where id = #{loginID}
+	</update>
+	<update id="pointPlus2">
+		update d_member m set point = point+200 
+    	where m.id in(select entry from piledata where cno = #{seq})
+	</update>
+	
+	<update id="pointplusRid">
+		update d_member set point = point+500 where id = #{rid}
+	</update>
+	
+	
+	
+</mapper>
