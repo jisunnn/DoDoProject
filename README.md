@@ -11,13 +11,13 @@
              로고(미리캔버스에서 제작) 및 배너(슬라이드 기능 jquery 사용), 전체적인 화면 구성 수정(css3, HTML5), 
              챌린지 상세페이지 사이드바(디데이, jquery로 마우스를 따라 움직이게 구현) 
 
-#### Backend
+### Backend
 사용 언어 : Java, Jsp
 프레임 워크 : Spring Framework, MyBatis              
 데이터 베이스 : Oracle
 서버 : Apache Tomcat 9.0
 
-#### Frontend
+### Frontend
 사용 언어 :  CSS3, HTML, JavaScript, Bootstrap(부분적 사용)
 라이브러리 : JQuery, Ajax
 
