@@ -1,2 +1,24 @@
-# DoDoProject
-Team Project  Upload
+## 너do나do   
+
+### 개요
+다양한 주제의 챌린지(미션)를 생성하거나 원하는 챌린지에 참여하고 다른 회원들과 함께 챌린지를 수행하여 포인트를 얻으며 상위 랭킹에 도전할 수 있습니다.
+
+### 구현 기술
+참여도 : 35%
+참여 내용 :  고객지원(1:1 문의- 답글 기능, <c:if>로 글 생성, 수정, 삭제 및 열람 권한 지정), 공지사항,
+             랭킹 시스템(DB: 트리거(왜? 회원 테이블과 랭킹 테이블의 데이터 연동이 필요) 및 분석 함수(rank over()) 사용, 
+             메인 페이지에 출력: Ajax 사용(왜? 실시간 랭킹 DB반영을 위해서 새로고침없이 DB반영이 되는 Ajax사용), 
+             로고(미리캔버스에서 제작) 및 배너(슬라이드 기능 jquery 사용), 전체적인 화면 구성 수정(css3, HTML5), 
+             챌린지 상세페이지 사이드바(디데이, jquery로 마우스를 따라 움직이게 구현) 
+
+#### Backend
+사용 언어 : Java, Jsp
+프레임 워크 : Spring Framework, MyBatis              
+데이터 베이스 : Oracle
+서버 : Apache Tomcat 9.0
+
+#### Frontend
+사용 언어 :  CSS3, HTML, JavaScript, Bootstrap(부분적 사용)
+라이브러리 : JQuery, Ajax
+
+
