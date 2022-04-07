@@ -23,14 +23,14 @@
 
 ### 구현 기술
 
--요구사항
+- 요구사항
 ![image](https://user-images.githubusercontent.com/97445449/162133767-3e13e04f-87c7-4336-bcdf-56b4a8e07d87.png)
 
 ![image](https://user-images.githubusercontent.com/97445449/162133790-5d4765bd-44a8-47bb-b0d9-7ff2dc224ae9.png)
 
 
 
-- 나의 참여도 : 30%
+- 나의 참여도 : 35%
 
 - 나의 참여 내용
 
