@@ -7,36 +7,33 @@
 
 ### 구현 기술
 
-참여도 : 35%
+- 참여도 : 35%
 
-참여 내용 :  
-             고객지원(1:1 문의- 답글 기능, <c:if>로 글 생성, 수정, 삭제 및 열람 권한 지정), 
-             공지사항,
+- 참여 내용
 
-             랭킹 시스템(DB: Trigger사용( 이유: 회원 테이블과 랭킹 테이블의 데이터 연동이 필요) 및 분석 함수(rank over())사용,
-             
-             메인 페이지에 출력: Ajax 사용(이유: 실시간 랭킹 DB반영을 위해서 새로고침없이 DB반영이 되는 Ajax사용)),
-             
-             로고(미리캔버스에서 제작) 및 배너(슬라이드 기능 jquery 사용), 전체적인 화면 구성 수정(css3, HTML5, 부트스트랩 일부 사용),
-             
-             챌린지 상세페이지 사이드바((챌린지 시작 전 : D-day표시, 시작 후: 시작일로부터 일수 표시), jquery로 마우스를 따라 움직이게 구현) 
+    * 고객지원(1:1 문의- 답글 기능, <c:if>로 글 생성, 수정, 삭제 및 열람 권한 지정
+    * 공지사항
+    * 랭킹 시스템(DB: Trigger사용( 이유: 회원 테이블과 랭킹 테이블의 데이터 연동이 필요) 및 분석 함수(rank over())사용 
+    * 메인 페이지에 출력: Ajax 사용(이유: 실시간 랭킹 DB반영을 위해서 새로고침없이 DB반영이 되는 Ajax사용))
+    * 로고(미리캔버스에서 제작) 및 배너(슬라이드 기능 jquery 사용), 전체적인 화면 구성 수정(css3, HTML5, 부트스트랩 일부 사용)
+    * 챌린지 상세페이지 사이드바((챌린지 시작 전 : D-day표시, 시작 후: 시작일로부터 일수 표시), jquery로 마우스를 따라 움직이게 구현) 
 
 
 ### Backend
 
-사용 언어 : Java, Jsp
+- 사용 언어 : Java, Jsp
 
-프레임 워크 : Spring Framework, MyBatis              
+- 프레임 워크 : Spring Framework, MyBatis              
 
-데이터 베이스 : Oracle
+- 데이터 베이스 : Oracle
 
-서버 : Apache Tomcat 9.0
+- 서버 : Apache Tomcat 9.0
 
 
 ### Frontend
 
-사용 언어 :  CSS3, HTML, JavaScript, Bootstrap(부분적 사용)
+- 사용 언어 :  CSS3, HTML, JavaScript, Bootstrap(부분적 사용)
 
-라이브러리 : JQuery, Ajax
+- 라이브러리 : JQuery, Ajax
 
 
