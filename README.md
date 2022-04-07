@@ -3,13 +3,35 @@
 ### 개요
 다양한 주제의 챌린지(미션)를 생성하거나 원하는 챌린지에 참여하고 다른 회원들과 함께 챌린지를 수행하여 성공시 포인트를 얻어 상위 랭킹에 도전할 수 있습니다.
 
+### Backend
+
+- 사용 언어 : Java, Jsp
+
+- 프레임 워크 : Spring Framework, MyBatis              
+
+- 데이터 베이스 : Oracle
+
+- 서버 : Apache Tomcat 9.0
+
+
+### Frontend
+
+- 사용 언어 :  CSS3, HTML, JavaScript, Bootstrap(부분적 사용)
+
+- 라이브러리 : JQuery, Ajax
 
 
 ### 구현 기술
 
-- 참여도 : 30%
+![image](https://user-images.githubusercontent.com/97445449/162133767-3e13e04f-87c7-4336-bcdf-56b4a8e07d87.png)
 
-- 참여 내용
+![image](https://user-images.githubusercontent.com/97445449/162133790-5d4765bd-44a8-47bb-b0d9-7ff2dc224ae9.png)
+
+
+
+- 나의 참여도 : 30%
+
+- 나의 참여 내용
 
     * 고객지원(1:1 문의 게시판) 
       * 관리자만 답글 가능, <c:if>로 글 생성, 수정, 삭제 및 열람 권한 지정, 문의 작성자는 본인의 글과 답변만 열람 가능
@@ -32,21 +54,9 @@
       * jquery로 마우스를 따라 움직이게 구현 
 
 
-### Backend
-
-- 사용 언어 : Java, Jsp
-
-- 프레임 워크 : Spring Framework, MyBatis              
-
-- 데이터 베이스 : Oracle
-
-- 서버 : Apache Tomcat 9.0
 
 
-### Frontend
-
-- 사용 언어 :  CSS3, HTML, JavaScript, Bootstrap(부분적 사용)
-
-- 라이브러리 : JQuery, Ajax
+### 데이터 베이스 테이블
+![image](https://user-images.githubusercontent.com/97445449/162133665-615b63cb-1630-4306-a268-8bfe8779a8f4.png)
 
 
