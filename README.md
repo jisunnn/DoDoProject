@@ -23,6 +23,7 @@
 
 ### 구현 기술
 
+-요구사항
 ![image](https://user-images.githubusercontent.com/97445449/162133767-3e13e04f-87c7-4336-bcdf-56b4a8e07d87.png)
 
 ![image](https://user-images.githubusercontent.com/97445449/162133790-5d4765bd-44a8-47bb-b0d9-7ff2dc224ae9.png)
@@ -56,7 +57,7 @@
 
 
 
-### 데이터 베이스 테이블
+### DB Table
 ![image](https://user-images.githubusercontent.com/97445449/162133665-615b63cb-1630-4306-a268-8bfe8779a8f4.png)
 
 
