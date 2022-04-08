@@ -46,7 +46,7 @@
       * 관리자만 글작성,수정,삭제,페이징 처리
 
     * 랭킹 시스템  
-      * DB: Trigger사용( 멤버 테이블과 랭킹 테이블의 데이터 연동) 및 분석 함수(rank over()) 사용 
+      * DB: Trigger사용( 멤버 테이블과 랭킹 테이블의 데이터 연동) 및 분석 함수(rank over())를 사용하여 1~5등까지 출력 
       * 메인 페이지에 상단에 출력: Ajax 사용(실시간 랭킹 DB반영을 위해 Ajax사용)
 
     * 로고(미리캔버스로 제작) 및 배너(슬라이드 기능 : jquery 사용)
@@ -61,6 +61,36 @@
 
 ### DB Table
 ![image](https://user-images.githubusercontent.com/97445449/162133665-615b63cb-1630-4306-a268-8bfe8779a8f4.png)
+
+***
+
+### 실행화면
+
+- 로그인, 회원가입, 아이디·비밀번호 찾기
+![image](https://user-images.githubusercontent.com/97445449/162340948-673773d6-59b1-4baf-99fd-e8f0709b907f.png)
+
+- 공지사항 
+![image](https://user-images.githubusercontent.com/97445449/162346211-d533f934-e23a-4a11-bbd7-33d3a794a9d9.png)
+
+- 고객지원(1:1문의)
+![image](https://user-images.githubusercontent.com/97445449/162346283-92f83e75-fa03-41c6-b4e5-da9715ed415a.png)
+
+- 챌린지 검색·정렬, 출석, 신고하기
+![image](https://user-images.githubusercontent.com/97445449/162348504-52a46cbd-9f53-406c-8be7-fc4cf08c0c0a.png)
+
+- 마이페이지
+![image](https://user-images.githubusercontent.com/97445449/162347505-8417f8d5-3438-45a0-9748-a63995b6a7c9.png)
+
+-관리자 로그인· 페이지
+![image](https://user-images.githubusercontent.com/97445449/162347974-6a6a5cb7-7ca2-433f-8fb9-85d418c6135d.png)
+
+- 랭킹 시스템
+![image](https://user-images.githubusercontent.com/97445449/162349025-9d8a517e-a9cf-45bb-8b69-61c742781d8c.png)
+
+
+
+
+
 
 ***
 
