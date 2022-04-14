@@ -8,8 +8,11 @@
 
 ***
 
-### 개발기간
+### 개발 기간
 2022.01.03 ~ 2022.02.17
+
+### 개발 기간 동안 사용한 Github 주소
+https://github.com/Hjjjjjjjjj9/DoDo_Challenge
 
 ### Backend
 
