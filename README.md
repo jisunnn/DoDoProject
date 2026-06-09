@@ -72,6 +72,25 @@ https://github.com/Hjjjjjjjjj9/DoDo_Challenge
 ![image](https://user-images.githubusercontent.com/97445449/162133665-615b63cb-1630-4306-a268-8bfe8779a8f4.png)
 
 ***
+### 기본 데이터 흐름 구조
+<img width="795" height="301" alt="image" src="https://github.com/user-attachments/assets/3c89580d-44c7-430e-8e4c-0fd8c9f21c4e" />
+
+***
+### 기능 도메인 별 데이터 흐름
+1. 회원 관리 (Member): MemberController ➔ MemberService(Impl) ➔ MemberMapper ➔ Oracle DB
+   설명: 사용자가 로그인, 회원가입, 회원정보 수정 등을 요청하면 컨트롤러가 이 요청을 받아 서비스로 전달합니다. 서비스는 암호화나 비즈니스 검증을 거친 후 매퍼를 통해 DB의 회원 테이블 데이터를 생성, 조회, 수정, 삭제(CRUD)합니다.
+2. 챌린지 관리 (Challenge): ChallengeController ➔ ChallengeService(Impl) ➔ ChallengeMapper ➔ Oracle DB
+   설명: 사용자가 챌린지를 개설하거나 목록을 조회할 때 작동합니다. 챌린지 상태(진행 중, 마감 등)나 카테고리별 필터링 데이터가 이 라인을 통해 처리됩니다.
+3. 파일/인증 데이터 관리 (Piledata): ChallengeController ➔ PiledataService(Impl) ➔ PiledataMapper ➔ Oracle DB
+   설명: 사용자가 챌린지 참가 후 인증 사진이나 파일(Piledata)을 업로드할 때 사용됩니다. 파일의 메타데이터나 참가 인증 정보가 DB에 기록됩니다.
+4. 댓글/답변 관리 (Reply): ChallengeController ➔ ReplyService(Impl) ➔ ReplyMapper ➔ Oracle DB
+   설명: 특정 챌린지 내에서 사용자들이 작성하는 댓글, 신고(report) 등의 데이터가 전송되고 저장되는 경로입니다.
+5. 자유게시판 (Board) / 문의사항 (Ask) / 공지사항 (Notice): 각 Controller ➔ 각 Service(Impl) ➔ 각 Mapper ➔ Oracle DB
+   설명: 일반적인 게시판 형태의 데이터 흐름입니다. 페이징 처리된 리스트(pageList), 상세 보기(selectOne), 글쓰기/수정/삭제 데이터가 오고 갑니다.
+6. 랭킹 시스템 (Ranking): HomeController ➔ RankingService(Impl) ➔ RankingMapper ➔ Oracle DB
+   설명: 메인 화면(HomeController)이 구동될 때, 사용자의 활동 점수나 챌린지 달성도를 기반으로 한 상위 랭킹 데이터를 DB에서 조회하여 메인 페이지로 전달합니다.
+
+***
 
 ### 실행화면
 
